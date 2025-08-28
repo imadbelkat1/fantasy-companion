@@ -1,0 +1,129 @@
+2025-08-28 13:39:21,097 - __main__ - INFO - Starting FDR pipeline...
+2025-08-28 13:39:21,097 - src.core.pipeline - INFO - Starting FDR pipeline...
+2025-08-28 13:39:21,111 - src.data.extractor - INFO - Loaded data from ..\Data-Service\data\fbref_data.json
+2025-08-28 13:39:21,112 - src.core.pipeline - INFO - Processing league: epl
+2025-08-28 13:39:21,118 - src.data.extractor - INFO - Extracted epl data: 380 fixtures, 20 teams, 21 player aggregates
+2025-08-28 13:39:21,122 - src.utils.validation - WARNING - epl validation warnings: ['10 teams have unrealistic net_xg_per_game values', '6 teams have unrealistic prior_xg_diff_per_game values']
+2025-08-28 13:39:21,122 - src.utils.validation - INFO - epl data validation passed
+2025-08-28 13:39:21,454 - src.data.preprocessor - INFO - Prepared epl training data: 380 samples, 54 features
+2025-08-28 13:39:21,454 - src.models.team_rater - INFO - Training epl goal difference model...
+2025-08-28 13:39:22,697 - src.models.team_rater - INFO - Training epl outcome classification model...
+2025-08-28 13:39:22,729 - src.models.team_rater - INFO - Successfully fitted epl team rating models
+2025-08-28 13:39:22,733 - src.models.base - INFO - epl model validation: {'train_rmse': np.float64(0.30618654915595706), 'val_rmse': np.float64(0.582432020107932), 'train_mae': 0.11171733682432772, 'val_mae': 0.19284050061869623, 'train_r2': 0.5867783302460619, 'val_r2': 0.15068249359362385, 'overfitting_ratio': np.float64(1.9022129538788737)}
+2025-08-28 13:39:22,733 - src.data.preprocessor - INFO - Expected 54 features for epl team rating prediction
+2025-08-28 13:39:22,784 - src.data.preprocessor - WARNING - Missing feature gameweek for team rating prediction, using default 0
+2025-08-28 13:39:22,791 - src.data.preprocessor - WARNING - Missing feature fixture_home_xg for team rating prediction, using default 0
+2025-08-28 13:39:22,791 - src.data.preprocessor - WARNING - Missing feature fixture_away_xg for team rating prediction, using default 0
+2025-08-28 13:39:22,792 - src.data.preprocessor - WARNING - Missing feature fixture_xg_diff for team rating prediction, using default 0
+2025-08-28 13:39:22,792 - src.data.preprocessor - INFO - Created team features with 54 numeric features (plus team/league)
+2025-08-28 13:39:22,795 - src.data.preprocessor - INFO - Preprocessed team features for epl: 20 teams, 54 features
+2025-08-28 13:39:22,796 - src.models.team_rater - INFO - Predicting with 54 features for 20 teams
+2025-08-28 13:39:22,818 - src.core.pipeline - ERROR - Error processing epl: pandas dtypes must be int, float or bool.
+Fields with bad pandas dtypes: gameweek: object, is_home: object, home_xg_for_per_game: object, home_goals_per90: object, home_npxg_per90: object, home_xa_per90: object, home_xg_against_per_game: object, home_gk_save_pct: object, home_clean_sheets_pct: object, home_last_5_form: object, home_points_per_game: object, home_net_xg_per_game: object, home_home_points_per_game: object, home_home_xg_for_per_game: object, home_home_xg_against_per_game: object, home_possession: object, home_tackles_per90: object, home_interceptions_per90: object, home_prior_points_per_game: object, home_prior_xg_diff_per_game: object, home_top_player_xgxa: object, home_keeper_save_pct: object, home_mean_player_xg: object, away_xg_for_per_game: object, away_goals_per90: object, away_npxg_per90: object, away_xa_per90: object, away_xg_against_per_game: object, away_gk_save_pct: object, away_clean_sheets_pct: object, away_last_5_form: object, away_points_per_game: object, away_net_xg_per_game: object, away_away_points_per_game: object, away_away_xg_for_per_game: object, away_away_xg_against_per_game: object, away_possession: object, away_tackles_per90: object, away_interceptions_per90: object, away_prior_points_per_game: object, away_prior_xg_diff_per_game: object, away_top_player_xgxa: object, away_keeper_save_pct: object, away_mean_player_xg: object, home_attack_vs_away_defense: object, away_attack_vs_home_defense: object, net_xg_differential: object, form_differential: object, points_per_game_differential: object, goalkeeper_quality_diff: object, top_player_quality_diff: object, fixture_home_xg: object, fixture_away_xg: object, fixture_xg_diff: object
+2025-08-28 13:39:22,818 - src.core.pipeline - INFO - Processing league: laliga
+2025-08-28 13:39:22,827 - src.data.extractor - INFO - Extracted laliga data: 380 fixtures, 20 teams, 21 player aggregates
+2025-08-28 13:39:22,832 - src.utils.validation - WARNING - laliga validation warnings: ['10 teams have unrealistic net_xg_per_game values', '10 teams have unrealistic prior_xg_diff_per_game values']
+2025-08-28 13:39:22,832 - src.utils.validation - INFO - laliga data validation passed
+2025-08-28 13:39:23,180 - src.data.preprocessor - INFO - Prepared laliga training data: 380 samples, 54 features
+2025-08-28 13:39:23,180 - src.models.team_rater - INFO - Training laliga goal difference model...
+2025-08-28 13:39:23,194 - src.models.team_rater - INFO - Training laliga outcome classification model...
+2025-08-28 13:39:23,226 - src.models.team_rater - INFO - Successfully fitted laliga team rating models
+2025-08-28 13:39:23,230 - src.models.base - INFO - laliga model validation: {'train_rmse': np.float64(0.29015107359601094), 'val_rmse': np.float64(0.17649229381351275), 'train_mae': 0.09558988467128822, 'val_mae': 0.08821584140258594, 'train_r2': 0.5734492627548167, 'val_r2': 0.40026772005464206, 'overfitting_ratio': np.float64(0.6082772385645214)}
+2025-08-28 13:39:23,230 - src.data.preprocessor - INFO - Expected 54 features for laliga team rating prediction
+2025-08-28 13:39:23,261 - src.data.preprocessor - WARNING - Missing feature gameweek for team rating prediction, using default 0
+2025-08-28 13:39:23,273 - src.data.preprocessor - WARNING - Missing feature fixture_home_xg for team rating prediction, using default 0
+2025-08-28 13:39:23,273 - src.data.preprocessor - WARNING - Missing feature fixture_away_xg for team rating prediction, using default 0
+2025-08-28 13:39:23,273 - src.data.preprocessor - WARNING - Missing feature fixture_xg_diff for team rating prediction, using default 0
+2025-08-28 13:39:23,274 - src.data.preprocessor - INFO - Created team features with 54 numeric features (plus team/league)
+2025-08-28 13:39:23,278 - src.data.preprocessor - INFO - Preprocessed team features for laliga: 20 teams, 54 features
+2025-08-28 13:39:23,280 - src.models.team_rater - INFO - Predicting with 54 features for 20 teams
+2025-08-28 13:39:23,297 - src.core.pipeline - ERROR - Error processing laliga: pandas dtypes must be int, float or bool.
+Fields with bad pandas dtypes: gameweek: object, is_home: object, home_xg_for_per_game: object, home_goals_per90: object, home_npxg_per90: object, home_xa_per90: object, home_xg_against_per_game: object, home_gk_save_pct: object, home_clean_sheets_pct: object, home_last_5_form: object, home_points_per_game: object, home_net_xg_per_game: object, home_home_points_per_game: object, home_home_xg_for_per_game: object, home_home_xg_against_per_game: object, home_possession: object, home_tackles_per90: object, home_interceptions_per90: object, home_prior_points_per_game: object, home_prior_xg_diff_per_game: object, home_top_player_xgxa: object, home_keeper_save_pct: object, home_mean_player_xg: object, away_xg_for_per_game: object, away_goals_per90: object, away_npxg_per90: object, away_xa_per90: object, away_xg_against_per_game: object, away_gk_save_pct: object, away_clean_sheets_pct: object, away_last_5_form: object, away_points_per_game: object, away_net_xg_per_game: object, away_away_points_per_game: object, away_away_xg_for_per_game: object, away_away_xg_against_per_game: object, away_possession: object, away_tackles_per90: object, away_interceptions_per90: object, away_prior_points_per_game: object, away_prior_xg_diff_per_game: object, away_top_player_xgxa: object, away_keeper_save_pct: object, away_mean_player_xg: object, home_attack_vs_away_defense: object, away_attack_vs_home_defense: object, net_xg_differential: object, form_differential: object, points_per_game_differential: object, goalkeeper_quality_diff: object, top_player_quality_diff: object, fixture_home_xg: object, fixture_away_xg: object, fixture_xg_diff: object
+2025-08-28 13:39:23,298 - src.core.pipeline - INFO - Saved pipeline summary to output\pipeline_summary.json
+2025-08-28 13:39:23,298 - src.core.pipeline - INFO - FDR pipeline completed successfully
+2025-08-28 13:40:01,990 - __main__ - INFO - Starting FDR pipeline...
+2025-08-28 13:40:01,991 - src.core.pipeline - INFO - Starting FDR pipeline...
+2025-08-28 13:40:02,006 - src.data.extractor - INFO - Loaded data from ..\Data-Service\data\fbref_data.json
+2025-08-28 13:40:02,006 - src.core.pipeline - INFO - Processing league: epl
+2025-08-28 13:40:02,013 - src.data.extractor - INFO - Extracted epl data: 380 fixtures, 20 teams, 21 player aggregates
+2025-08-28 13:40:02,017 - src.utils.validation - WARNING - epl validation warnings: ['10 teams have unrealistic net_xg_per_game values', '6 teams have unrealistic prior_xg_diff_per_game values']
+2025-08-28 13:40:02,017 - src.utils.validation - INFO - epl data validation passed
+2025-08-28 13:40:02,368 - src.data.preprocessor - INFO - Prepared epl training data: 380 samples, 54 features
+2025-08-28 13:40:02,368 - src.models.team_rater - INFO - Training epl goal difference model...
+2025-08-28 13:40:03,671 - src.models.team_rater - INFO - Training epl outcome classification model...
+2025-08-28 13:40:03,703 - src.models.team_rater - INFO - Successfully fitted epl team rating models
+2025-08-28 13:40:03,707 - src.models.base - INFO - epl model validation: {'train_rmse': np.float64(0.30618654915595706), 'val_rmse': np.float64(0.582432020107932), 'train_mae': 0.11171733682432772, 'val_mae': 0.19284050061869623, 'train_r2': 0.5867783302460619, 'val_r2': 0.15068249359362385, 'overfitting_ratio': np.float64(1.9022129538788737)}
+2025-08-28 13:40:03,707 - src.data.preprocessor - INFO - Expected 54 features for epl team rating prediction
+2025-08-28 13:40:03,742 - src.data.preprocessor - WARNING - Missing feature gameweek for team rating prediction, using default 0
+2025-08-28 13:40:03,750 - src.data.preprocessor - WARNING - Missing feature fixture_home_xg for team rating prediction, using default 0
+2025-08-28 13:40:03,750 - src.data.preprocessor - WARNING - Missing feature fixture_away_xg for team rating prediction, using default 0
+2025-08-28 13:40:03,750 - src.data.preprocessor - WARNING - Missing feature fixture_xg_diff for team rating prediction, using default 0
+2025-08-28 13:40:03,751 - src.data.preprocessor - INFO - Created team features with 54 numeric features (plus team/league)
+2025-08-28 13:40:03,754 - src.data.preprocessor - INFO - Preprocessed team features for epl: 20 teams, 54 features
+2025-08-28 13:40:03,754 - src.models.team_rater - INFO - Predicting with 54 features for 20 teams
+2025-08-28 13:40:03,772 - src.core.pipeline - ERROR - Error processing epl: pandas dtypes must be int, float or bool.
+Fields with bad pandas dtypes: gameweek: object, is_home: object, home_xg_for_per_game: object, home_goals_per90: object, home_npxg_per90: object, home_xa_per90: object, home_xg_against_per_game: object, home_gk_save_pct: object, home_clean_sheets_pct: object, home_last_5_form: object, home_points_per_game: object, home_net_xg_per_game: object, home_home_points_per_game: object, home_home_xg_for_per_game: object, home_home_xg_against_per_game: object, home_possession: object, home_tackles_per90: object, home_interceptions_per90: object, home_prior_points_per_game: object, home_prior_xg_diff_per_game: object, home_top_player_xgxa: object, home_keeper_save_pct: object, home_mean_player_xg: object, away_xg_for_per_game: object, away_goals_per90: object, away_npxg_per90: object, away_xa_per90: object, away_xg_against_per_game: object, away_gk_save_pct: object, away_clean_sheets_pct: object, away_last_5_form: object, away_points_per_game: object, away_net_xg_per_game: object, away_away_points_per_game: object, away_away_xg_for_per_game: object, away_away_xg_against_per_game: object, away_possession: object, away_tackles_per90: object, away_interceptions_per90: object, away_prior_points_per_game: object, away_prior_xg_diff_per_game: object, away_top_player_xgxa: object, away_keeper_save_pct: object, away_mean_player_xg: object, home_attack_vs_away_defense: object, away_attack_vs_home_defense: object, net_xg_differential: object, form_differential: object, points_per_game_differential: object, goalkeeper_quality_diff: object, top_player_quality_diff: object, fixture_home_xg: object, fixture_away_xg: object, fixture_xg_diff: object
+2025-08-28 13:40:03,772 - src.core.pipeline - INFO - Processing league: laliga
+2025-08-28 13:40:03,778 - src.data.extractor - INFO - Extracted laliga data: 380 fixtures, 20 teams, 21 player aggregates
+2025-08-28 13:40:03,783 - src.utils.validation - WARNING - laliga validation warnings: ['10 teams have unrealistic net_xg_per_game values', '10 teams have unrealistic prior_xg_diff_per_game values']
+2025-08-28 13:40:03,783 - src.utils.validation - INFO - laliga data validation passed
+2025-08-28 13:40:04,118 - src.data.preprocessor - INFO - Prepared laliga training data: 380 samples, 54 features
+2025-08-28 13:40:04,118 - src.models.team_rater - INFO - Training laliga goal difference model...
+2025-08-28 13:40:04,136 - src.models.team_rater - INFO - Training laliga outcome classification model...
+2025-08-28 13:40:04,172 - src.models.team_rater - INFO - Successfully fitted laliga team rating models
+2025-08-28 13:40:04,176 - src.models.base - INFO - laliga model validation: {'train_rmse': np.float64(0.29015107359601094), 'val_rmse': np.float64(0.17649229381351275), 'train_mae': 0.09558988467128822, 'val_mae': 0.08821584140258594, 'train_r2': 0.5734492627548167, 'val_r2': 0.40026772005464206, 'overfitting_ratio': np.float64(0.6082772385645214)}
+2025-08-28 13:40:04,176 - src.data.preprocessor - INFO - Expected 54 features for laliga team rating prediction
+2025-08-28 13:40:04,223 - src.data.preprocessor - WARNING - Missing feature gameweek for team rating prediction, using default 0
+2025-08-28 13:40:04,236 - src.data.preprocessor - WARNING - Missing feature fixture_home_xg for team rating prediction, using default 0
+2025-08-28 13:40:04,236 - src.data.preprocessor - WARNING - Missing feature fixture_away_xg for team rating prediction, using default 0
+2025-08-28 13:40:04,236 - src.data.preprocessor - WARNING - Missing feature fixture_xg_diff for team rating prediction, using default 0
+2025-08-28 13:40:04,237 - src.data.preprocessor - INFO - Created team features with 54 numeric features (plus team/league)
+2025-08-28 13:40:04,242 - src.data.preprocessor - INFO - Preprocessed team features for laliga: 20 teams, 54 features
+2025-08-28 13:40:04,243 - src.models.team_rater - INFO - Predicting with 54 features for 20 teams
+2025-08-28 13:40:04,270 - src.core.pipeline - ERROR - Error processing laliga: pandas dtypes must be int, float or bool.
+Fields with bad pandas dtypes: gameweek: object, is_home: object, home_xg_for_per_game: object, home_goals_per90: object, home_npxg_per90: object, home_xa_per90: object, home_xg_against_per_game: object, home_gk_save_pct: object, home_clean_sheets_pct: object, home_last_5_form: object, home_points_per_game: object, home_net_xg_per_game: object, home_home_points_per_game: object, home_home_xg_for_per_game: object, home_home_xg_against_per_game: object, home_possession: object, home_tackles_per90: object, home_interceptions_per90: object, home_prior_points_per_game: object, home_prior_xg_diff_per_game: object, home_top_player_xgxa: object, home_keeper_save_pct: object, home_mean_player_xg: object, away_xg_for_per_game: object, away_goals_per90: object, away_npxg_per90: object, away_xa_per90: object, away_xg_against_per_game: object, away_gk_save_pct: object, away_clean_sheets_pct: object, away_last_5_form: object, away_points_per_game: object, away_net_xg_per_game: object, away_away_points_per_game: object, away_away_xg_for_per_game: object, away_away_xg_against_per_game: object, away_possession: object, away_tackles_per90: object, away_interceptions_per90: object, away_prior_points_per_game: object, away_prior_xg_diff_per_game: object, away_top_player_xgxa: object, away_keeper_save_pct: object, away_mean_player_xg: object, home_attack_vs_away_defense: object, away_attack_vs_home_defense: object, net_xg_differential: object, form_differential: object, points_per_game_differential: object, goalkeeper_quality_diff: object, top_player_quality_diff: object, fixture_home_xg: object, fixture_away_xg: object, fixture_xg_diff: object
+2025-08-28 13:40:04,271 - src.core.pipeline - INFO - Saved pipeline summary to output\pipeline_summary.json
+2025-08-28 13:40:04,271 - src.core.pipeline - INFO - FDR pipeline completed successfully
+2025-08-28 13:42:55,331 - __main__ - INFO - Starting FDR pipeline...
+2025-08-28 13:42:55,331 - src.core.pipeline - INFO - Starting FDR pipeline...
+2025-08-28 13:42:55,345 - src.data.extractor - INFO - Loaded data from ..\Data-Service\data\fbref_data.json
+2025-08-28 13:42:55,345 - src.core.pipeline - INFO - Processing league: epl
+2025-08-28 13:42:55,351 - src.data.extractor - INFO - Extracted epl data: 380 fixtures, 20 teams, 21 player aggregates
+2025-08-28 13:42:55,356 - src.utils.validation - WARNING - epl validation warnings: ['10 teams have unrealistic net_xg_per_game values', '6 teams have unrealistic prior_xg_diff_per_game values']
+2025-08-28 13:42:55,356 - src.utils.validation - INFO - epl data validation passed
+2025-08-28 13:42:55,678 - src.data.preprocessor - INFO - Prepared epl training data: 380 samples, 54 features
+2025-08-28 13:42:55,678 - src.models.team_rater - INFO - Training epl goal difference model...
+2025-08-28 13:42:56,923 - src.models.team_rater - INFO - Training epl outcome classification model...
+2025-08-28 13:42:56,956 - src.models.team_rater - INFO - Successfully fitted epl team rating models
+2025-08-28 13:42:56,960 - src.models.base - INFO - epl model validation: {'train_rmse': np.float64(0.30618654915595706), 'val_rmse': np.float64(0.582432020107932), 'train_mae': 0.11171733682432772, 'val_mae': 0.19284050061869623, 'train_r2': 0.5867783302460619, 'val_r2': 0.15068249359362385, 'overfitting_ratio': np.float64(1.9022129538788737)}
+2025-08-28 13:42:56,960 - src.data.preprocessor - INFO - Expected 54 features for epl team rating prediction
+2025-08-28 13:42:56,999 - src.data.preprocessor - WARNING - Missing feature gameweek for team rating prediction, using default 0
+2025-08-28 13:42:57,005 - src.data.preprocessor - WARNING - Missing feature fixture_home_xg for team rating prediction, using default 0
+2025-08-28 13:42:57,005 - src.data.preprocessor - WARNING - Missing feature fixture_away_xg for team rating prediction, using default 0
+2025-08-28 13:42:57,005 - src.data.preprocessor - WARNING - Missing feature fixture_xg_diff for team rating prediction, using default 0
+2025-08-28 13:42:57,005 - src.data.preprocessor - INFO - Created team features with 54 numeric features (plus team/league)
+2025-08-28 13:42:57,008 - src.data.preprocessor - INFO - Preprocessed team features for epl: 20 teams, 54 features
+2025-08-28 13:42:57,008 - src.models.team_rater - INFO - Predicting with 54 features for 20 teams
+2025-08-28 13:42:57,030 - src.core.pipeline - ERROR - Error processing epl: pandas dtypes must be int, float or bool.
+Fields with bad pandas dtypes: gameweek: object, is_home: object, home_xg_for_per_game: object, home_goals_per90: object, home_npxg_per90: object, home_xa_per90: object, home_xg_against_per_game: object, home_gk_save_pct: object, home_clean_sheets_pct: object, home_last_5_form: object, home_points_per_game: object, home_net_xg_per_game: object, home_home_points_per_game: object, home_home_xg_for_per_game: object, home_home_xg_against_per_game: object, home_possession: object, home_tackles_per90: object, home_interceptions_per90: object, home_prior_points_per_game: object, home_prior_xg_diff_per_game: object, home_top_player_xgxa: object, home_keeper_save_pct: object, home_mean_player_xg: object, away_xg_for_per_game: object, away_goals_per90: object, away_npxg_per90: object, away_xa_per90: object, away_xg_against_per_game: object, away_gk_save_pct: object, away_clean_sheets_pct: object, away_last_5_form: object, away_points_per_game: object, away_net_xg_per_game: object, away_away_points_per_game: object, away_away_xg_for_per_game: object, away_away_xg_against_per_game: object, away_possession: object, away_tackles_per90: object, away_interceptions_per90: object, away_prior_points_per_game: object, away_prior_xg_diff_per_game: object, away_top_player_xgxa: object, away_keeper_save_pct: object, away_mean_player_xg: object, home_attack_vs_away_defense: object, away_attack_vs_home_defense: object, net_xg_differential: object, form_differential: object, points_per_game_differential: object, goalkeeper_quality_diff: object, top_player_quality_diff: object, fixture_home_xg: object, fixture_away_xg: object, fixture_xg_diff: object
+2025-08-28 13:42:57,030 - src.core.pipeline - INFO - Processing league: laliga
+2025-08-28 13:42:57,037 - src.data.extractor - INFO - Extracted laliga data: 380 fixtures, 20 teams, 21 player aggregates
+2025-08-28 13:42:57,042 - src.utils.validation - WARNING - laliga validation warnings: ['10 teams have unrealistic net_xg_per_game values', '10 teams have unrealistic prior_xg_diff_per_game values']
+2025-08-28 13:42:57,042 - src.utils.validation - INFO - laliga data validation passed
+2025-08-28 13:42:57,406 - src.data.preprocessor - INFO - Prepared laliga training data: 380 samples, 54 features
+2025-08-28 13:42:57,407 - src.models.team_rater - INFO - Training laliga goal difference model...
+2025-08-28 13:42:57,420 - src.models.team_rater - INFO - Training laliga outcome classification model...
+2025-08-28 13:42:57,451 - src.models.team_rater - INFO - Successfully fitted laliga team rating models
+2025-08-28 13:42:57,455 - src.models.base - INFO - laliga model validation: {'train_rmse': np.float64(0.29015107359601094), 'val_rmse': np.float64(0.17649229381351275), 'train_mae': 0.09558988467128822, 'val_mae': 0.08821584140258594, 'train_r2': 0.5734492627548167, 'val_r2': 0.40026772005464206, 'overfitting_ratio': np.float64(0.6082772385645214)}
+2025-08-28 13:42:57,455 - src.data.preprocessor - INFO - Expected 54 features for laliga team rating prediction
+2025-08-28 13:42:57,507 - src.data.preprocessor - WARNING - Missing feature gameweek for team rating prediction, using default 0
+2025-08-28 13:42:57,520 - src.data.preprocessor - WARNING - Missing feature fixture_home_xg for team rating prediction, using default 0
+2025-08-28 13:42:57,520 - src.data.preprocessor - WARNING - Missing feature fixture_away_xg for team rating prediction, using default 0
+2025-08-28 13:42:57,520 - src.data.preprocessor - WARNING - Missing feature fixture_xg_diff for team rating prediction, using default 0
+2025-08-28 13:42:57,520 - src.data.preprocessor - INFO - Created team features with 54 numeric features (plus team/league)
+2025-08-28 13:42:57,523 - src.data.preprocessor - INFO - Preprocessed team features for laliga: 20 teams, 54 features
+2025-08-28 13:42:57,523 - src.models.team_rater - INFO - Predicting with 54 features for 20 teams
+2025-08-28 13:42:57,539 - src.core.pipeline - ERROR - Error processing laliga: pandas dtypes must be int, float or bool.
+Fields with bad pandas dtypes: gameweek: object, is_home: object, home_xg_for_per_game: object, home_goals_per90: object, home_npxg_per90: object, home_xa_per90: object, home_xg_against_per_game: object, home_gk_save_pct: object, home_clean_sheets_pct: object, home_last_5_form: object, home_points_per_game: object, home_net_xg_per_game: object, home_home_points_per_game: object, home_home_xg_for_per_game: object, home_home_xg_against_per_game: object, home_possession: object, home_tackles_per90: object, home_interceptions_per90: object, home_prior_points_per_game: object, home_prior_xg_diff_per_game: object, home_top_player_xgxa: object, home_keeper_save_pct: object, home_mean_player_xg: object, away_xg_for_per_game: object, away_goals_per90: object, away_npxg_per90: object, away_xa_per90: object, away_xg_against_per_game: object, away_gk_save_pct: object, away_clean_sheets_pct: object, away_last_5_form: object, away_points_per_game: object, away_net_xg_per_game: object, away_away_points_per_game: object, away_away_xg_for_per_game: object, away_away_xg_against_per_game: object, away_possession: object, away_tackles_per90: object, away_interceptions_per90: object, away_prior_points_per_game: object, away_prior_xg_diff_per_game: object, away_top_player_xgxa: object, away_keeper_save_pct: object, away_mean_player_xg: object, home_attack_vs_away_defense: object, away_attack_vs_home_defense: object, net_xg_differential: object, form_differential: object, points_per_game_differential: object, goalkeeper_quality_diff: object, top_player_quality_diff: object, fixture_home_xg: object, fixture_away_xg: object, fixture_xg_diff: object
+2025-08-28 13:42:57,540 - src.core.pipeline - INFO - Saved pipeline summary to output\pipeline_summary.json
+2025-08-28 13:42:57,540 - src.core.pipeline - INFO - FDR pipeline completed successfully
